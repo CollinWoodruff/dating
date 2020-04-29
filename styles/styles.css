@@ -51,7 +51,8 @@ p {
 }
 
 img {
-    width: 100%; /* you can use % or px */
+    padding-top: 60px;
+    width: 125%; /* you can use % or px */
     height: auto;
 }
 
@@ -67,7 +68,7 @@ img {
 }
 
 button:hover {
-    background-color: crimson;
+    background-color: orange;
     text-decoration-color: black;
 }
 
