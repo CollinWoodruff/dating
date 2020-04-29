@@ -1,0 +1,86 @@
+@charset "utf-8";
+/*
+
+  Dating Website
+   Author: Collin Woodruff
+   Date: 1/19/2018
+
+   Filename: styles.css
+
+*/
+
+
+/* HTML and Body Styles */
+
+html {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    padding: 10px;
+    border: 25px #000000;
+    text-align: center;
+    width: 98%;
+}
+
+h2 {
+    text-align: center;
+}
+
+
+h3 {
+    text-align: center;
+}
+
+legend {
+    text-align: center;
+    font-size: 2.5vmin;
+}
+
+p {
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+img {
+    width: 60%; /* you can use % or px */
+    height: auto;
+}
+
+button {
+    background-color: rebeccapurple;
+    text-decoration-color: black;
+    width: 12em;
+    height: 4em;
+}
+
+button:hover {
+    background-color: blue;
+}
+
+.err {
+    visibility: hidden;
+    color: darkred;
+    padding-left: 1.3em;
+}
+
+.checkboxes {
+    text-align:center;
+}
+
+.checkboxes input{
+    margin: 0px 0px 0px 0px;
+}
+
+.checkboxes label{
+    margin: 0px 20px 0px 3px;
+}
