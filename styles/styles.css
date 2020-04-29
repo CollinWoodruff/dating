@@ -52,19 +52,24 @@ p {
 }
 
 img {
-    width: 60%; /* you can use % or px */
+    width: 100%; /* you can use % or px */
     height: auto;
 }
 
-button {
-    background-color: rebeccapurple;
+.button {
+    background-color: lightsalmon;
     text-decoration-color: black;
     width: 12em;
     height: 4em;
 }
 
+.button2 {
+    border-radius: 12px;
+}
+
 button:hover {
-    background-color: blue;
+    background-color: crimson;
+    text-decoration-color: black;
 }
 
 .err {
@@ -83,4 +88,17 @@ button:hover {
 
 .checkboxes label{
     margin: 0px 20px 0px 3px;
+}
+
+.bg {
+    /* The image used */
+    background-image: url("../images/Obeagle/doggoOne.jpg");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

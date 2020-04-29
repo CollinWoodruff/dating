@@ -22,7 +22,7 @@ $f3->set('DEBUG', 3);
 
 //Define a default route
 $f3->route('GET /', function() {
-    echo '<nav><ul><li><a href="../DatingSite/model/Database.php">Member Table</a></li></ul></nav>';
+
     $view = new View;
     echo $view->render('views/home.html');
 });
@@ -30,7 +30,6 @@ $f3->route('GET /', function() {
 
 //Define a form1 route
 $f3->route('GET|POST /date', function($f3) {
-    echo '<nav><ul><li><a href="../DatingSite/model/Database.php">Member Table</a></li></ul></nav>';
     $_SESSION = array();
     global $isValid;
 
@@ -49,7 +48,6 @@ $f3->route('GET|POST /date', function($f3) {
 
 //Define a form2 route
 $f3->route('GET|POST /date2', function($f3) {
-    echo '<nav><ul><li><a href="../DatingSite/model/Database.php">Member Table</a></li></ul></nav>';
 
     print_r($_SESSION);
     $f3->set('first', 'jshmo');
@@ -62,7 +60,6 @@ $f3->route('GET|POST /date2', function($f3) {
 
 //Define a form3 route
 $f3->route('GET|POST /date3', function($f3) {
-    echo '<nav><ul><li><a href="../DatingSite/model/Database.php">Member Table</a></li></ul></nav>';
 
     if(isset($_POST['color']))
     {
@@ -84,7 +81,6 @@ $f3->route('GET|POST /date3', function($f3) {
 
 //Define a form4 route
 $f3->route('GET|POST /date4', function($f3) {
-    echo '<nav><ul><li><a href="../DatingSite/model/Database.php">Member Table</a></li></ul></nav>';
     print_r($_SESSION);
 
     $template = new Template();

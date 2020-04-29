@@ -10,13 +10,42 @@
   -->
     <title>Dating Site</title>
     <meta charset="UTF-8">
-    <link href="../../DatingSite/styles/styles.css" rel="stylesheet" type="text/css" />
+    <link href="styles/styles.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet"
           href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 </head>
 <body>
+<header>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="#"><strong>AppName</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navvbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link text-primary" href="#">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-primary" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link glyphicon glyphicon-user" href="#">Profile</a>
+                </li>
+            </ul>
+            <form class="form-inline">
+                <div class="md-form my-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                </div>
+            </form>
+        </div>
+    </div>
+</nav>
+<div class="bg"></div>
+</header>
     <div class="container">
         <div class="row">
             <section class="col">
@@ -30,7 +59,7 @@
                     <hr>
                     <div class="entry-content">
                         <h4>~ Laura Handcock</h4>
-                        <p>Whoever made this site has a lack of imagination. There is almost no content and the
+                        <p class="font-italic">Whoever made this site has a lack of imagination. There is almost no content and the
                             buttons don't even work!</p>
                         <div class="review-rating--score">
                             <h5 class="score-title">Score</h5>
@@ -46,7 +75,7 @@
                     <hr>
                     <div class="entry-content">
                         <h4>~ Jim Butcher</h4>
-                        <p>I got a date for the first time in years I felt like I could completely be myself. I appreciate having this app.</p>
+                        <p class="font-italic">I got a date for the first time in years I felt like I could completely be myself. I appreciate having this app.</p>
                         <div class="review-rating--score">
                             <h5 class="score-title">Score</h5>
                             <div class="score-stars">
@@ -61,7 +90,7 @@
                     <hr>
                     <div class="entry-content">
                         <h4>~ Ruth Goldman</h4>
-                        <p>This app does what it says it does. However there are other apps out there that do the same thing better.
+                        <p class="font-italic">This app does what it says it does. However there are other apps out there that do the same thing better.
                         Don't download this unless you are really desperate.</p>
                         <div class="review-rating--score">
                             <h5 class="score-title">Score</h5>
@@ -74,16 +103,15 @@
                             </div>
                         </div>
                     </div>
+                    <hr>
+                    <button id='CreateProfile' class='button button2' type='submit'><a href='date'>Create a Profile!</a></button>
 
                 </article>
                 </fieldset>
             </section>
             <section class="col">
-                <h2  class="text-lg-center">Don't feel beat join Midgets Meet!</h2>
                 <img class="align-self-auto mr-3 img-fluid rounded" style="width: 220px;" src="images/Obeagle/puppyLove.jpg" alt="dating" id="midg">
-                <br><br><br>
-                <button id='CreateProfile' class='btns' type='submit'><a href='date'>Create a Profile!</a></button>
-             </section>
+            </section>
         </div>
     </div>
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
