@@ -3,7 +3,7 @@
 
   Dating Website
    Author: Collin Woodruff
-   Date: 1/19/2018
+   Date: 4/29/2020
 
    Filename: styles.css
 
@@ -12,23 +12,22 @@
 
 /* HTML and Body Styles */
 
+/* HTML and Body Styles */
+{ margin: 0; padding: 0; }
+
 html {
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: 12px;
-    height: 100%;
+    /*background: url('/328X2/dating/images/Obeagle/doggoOne.jpg') no-repeat center center fixed;/*https://www.lonelyplanet.com/usa/rocky-mountains*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 body {
+    padding-top: 70px;
     min-height: 100%;
     margin-left: auto;
     margin-right: auto;
-}
-
-h1 {
-    padding: 10px;
-    border: 25px #000000;
-    text-align: center;
-    width: 98%;
 }
 
 h2 {
@@ -92,7 +91,7 @@ button:hover {
 
 .bg {
     /* The image used */
-    background-image: url("../images/Obeagle/doggoOne.jpg");
+    background-image: url("/328X2/dating/images/Obeagle/doggoOne.jpg");
 
     /* Full height */
     height: 100%;
