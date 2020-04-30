@@ -2,7 +2,7 @@
 /**
  * Created by PhpStorm.
  * User: Collin Woodruff
- * Date: 12/2/2018
+ * Date: 4/29/2020
  * Time: 1:53 PM
  *
  *  CREATE TABLE member ( _fname Varchar(15), _lname Varchar(15), _age int, __gender Varchar(10),
