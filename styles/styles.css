@@ -5,7 +5,7 @@
    Author: Collin Woodruff
    Date: 4/29/2020
 
-   Filename: styles.css
+   Filename: homeStyles.css
 
 */
 
@@ -13,13 +13,10 @@
 /* HTML and Body Styles */
 
 /* HTML and Body Styles */
-{ margin: 0; padding: 0; }
+
 
 html {
     /*background: url('/328X2/dating/images/Obeagle/doggoOne.jpg') no-repeat center center fixed;/*https://www.lonelyplanet.com/usa/rocky-mountains*/
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
 }
 
@@ -88,17 +85,4 @@ button:hover {
 
 .checkboxes label{
     margin: 0px 20px 0px 3px;
-}
-
-.bg {
-    /* The image used */
-    background-image: url("/328X2/dating/images/Obeagle/doggoOne.jpg");
-
-    /* Full height */
-    height: 100%;
-
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }

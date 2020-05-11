@@ -8,7 +8,8 @@
 print_r($_POST);
 global $isValid;
 $fname = $lname = $age = $sex = $phone = "";
-if(!empty($_POST['submit'])) {
+$email = $state = $seeking = $bio = "";
+if(!empty($_POST['submit1'])) {
 
     $isValid=true;
    // $isValid ['firstName'] = true;
@@ -22,6 +23,54 @@ if(!empty($_POST['submit'])) {
     }
 
     if (!empty($_POST['lastName'])) {
+        $lname = $_POST['lastName'];
+        $_SESSION['lastName'] = $lname;
+    } else {
+        $errorName = "Please enter a name";
+        $isValid = false;
+    }
+
+    if (!empty($_POST['age'])) {
+        $age = $_POST['age'];
+        $_SESSION['age'] = $age;
+    } else {
+        $errorAge = "Please enter a name";
+        $isValid = false;
+    }
+
+    if (!empty($_POST['sex'])) {
+        $sex = $_POST['sex'];
+        $_SESSION['sex'] = $sex;
+    } else {
+        $errorSex = "Please enter a name";
+        $isValid = false;
+    }
+
+    if (!empty($_POST['phone'])) {
+        $phone = $_POST['phone'];
+        $_SESSION['phone'] = $phone;
+    } else {
+        $errorPhone = "Please enter a name";
+        $isValid = false;
+    }
+    //$isValid =true;
+    //return $isValid;
+}
+
+if(!empty($_POST['submit2'])) {
+
+    $isValid=true;
+    // $isValid ['firstName'] = true;
+
+    if (!empty($_POST['email'])) {
+        $email = $_POST['email'];
+        $_SESSION['email'] = $email;
+    } else {
+        $errorName = "Please enter an email";
+        // $isValid['firstName'] = false;
+    }
+
+    if (!empty($_POST['state'])) {
         $lname = $_POST['lastName'];
         $_SESSION['lastName'] = $lname;
     } else {

@@ -50,12 +50,21 @@ $f3->route('GET|POST /date', function($f3) {
 $f3->route('GET|POST /date2', function($f3) {
 
     print_r($_SESSION);
-    $f3->set('first', 'jshmo');
+    global $isValid;
+
+    if(isset($_POST['email']))
+    {
+        include("model/Validation.php");
+        if ($isValid)
+        {
+            $f3->reroute('date3');
+        }
+    }
 
 
 
     $template = new Template();
-    echo $template->render('views/Profile.html');
+    echo $template->render('views/profile.php');
 });
 
 //Define a form3 route
