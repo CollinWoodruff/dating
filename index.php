@@ -51,6 +51,10 @@ $f3->route('GET|POST /date2', function($f3) {
 
     print_r($_SESSION);
     global $isValid;
+    $f3->set('states', array('AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL',
+        'IN','IA','KS','KY','LA','ME','MD','MA', 'MI','MN','MS','MO','MT','NE','NV',
+        'NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT',
+        'VT','VA','WA','WI','WY'));
 
     if(isset($_POST['email']))
     {

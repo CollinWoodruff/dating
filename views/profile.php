@@ -5,7 +5,6 @@
  * Date: 5/11/2020
  * Time: 2:57 PM
  */
-require_once ('../model/defineVars.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,12 +76,7 @@ Filename: home.html
             <span class="input-group-addon"><i class="fas fa-key"></i></span>
             <select>
                 <repeat>
-                    <?php
-                        foreach ($state as $value)
-                        {
-                            echo "<option value='$value'>$value</option>";
-                        }
-                    ?>
+                    <option value='{{ @states }}'>{{ @state }}</option>
                 </repeat>
             </select>
             <span  class="err" id="err-Age"><?php echo $passwordError ?></span>
