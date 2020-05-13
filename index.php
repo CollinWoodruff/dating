@@ -176,22 +176,38 @@ $f3->route('GET|POST /date2', function($f3) {
 //Define a form3 route
 $f3->route('GET|POST /date3', function($f3) {
 
-    if(isset($_POST['color']))
+    $f3->set('indoors',array('T.V','Movies','Cooking','Puzzles','Reading','Playing Card','Video Games'));
+    $f3->set('outdoors',array('Hiking','Biking','Swimming','Collecting','Walking','Climbing'));
+    print_r($_SESSION);
+
+    if(isset($_POST['submit']))
     {
-        $color = $_POST['color'];
-        if (validColor($color))
-        {
-            $_SESSION['color'] = $color;
-            $f3->reroute('results');
+        $isValid=true;
+
+        if (!empty($_POST['indoor'])) {
+            $_SESSION['indoors'] = $_POST['indoor'];
+        } else {
+            $f3->set("errors['indoor']", "Please select an indoor activity");
+            $isValid = false;
         }
-        else
+
+        if (!empty($_POST['outdoor'])) {
+            $_SESSION['outdoors'] = $_POST['outdoor'];
+        } else {
+            $f3->set("errors['outdoor']", "Please select an outdoor activity");
+            $isValid = false;
+        }
+
+        if ($isValid)
         {
-            $f3->set("errors['color']", "Please choose a color.");
+            $f3->reroute('date4');
+        }else{
+            echo "Failed";
         }
     }
 
     $template = new Template();
-    echo $template->render('views/Interests.html');
+    echo $template->render('views/interests.html');
 });
 
 //Define a form4 route
@@ -199,7 +215,7 @@ $f3->route('GET|POST /date4', function($f3) {
     print_r($_SESSION);
 
     $template = new Template();
-    echo $template->render('views/Summary.php');
+    echo $template->render('views/summary.html');
 });
 
 //Run fat free
