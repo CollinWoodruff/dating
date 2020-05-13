@@ -18,7 +18,7 @@
  * _phone` = '2068194354', `_interests` = 'Biking, Reading', `_email` = 'Cwoodruff@mail.greenriver.edu',
  * `_state` = 'Washington', `_seeking` = 'Female', `_bio` = 'Bio' WHERE `member`.`member_id` = 1;
  */
-require '/home/cwoodruf/db.php';
+require 'db.php';
 ?>
 
 

@@ -33,9 +33,48 @@ $f3->route('GET|POST /date', function($f3) {
     $_SESSION = array();
     global $isValid;
 
-    if(isset($_POST['firstName']))
+    if(isset($_POST['submit']))
     {
-        include("model/Validation.php");
+        $isValid=true;
+
+        if (!empty($_POST['firstName'])) {
+            $_SESSION['firstName'] = $_POST['firstName'];
+        } else {
+            $f3->set("errors['first']", "Please enter a first name");
+            $isValid= false;
+        }
+
+        if (!empty($_POST['lastName'])) {
+            $_SESSION['lastName'] = $_POST['lastName'];
+        } else {
+            $f3->set("errors['last']", "Please enter a last name");
+            $isValid = false;
+        }
+
+        if (!empty($_POST['age'])) {
+            $age = $_POST['age'];
+            $_SESSION['age'] = $age;
+        } else {
+            $f3->set("errors['age']", "Please enter an age");
+            $isValid = false;
+        }
+
+        if (!empty($_POST['sex'])) {
+            $sex = $_POST['sex'];
+            $_SESSION['sex'] = $sex;
+        } else {
+            $f3->set("errors['sex']", "Please enter a sex");
+            $isValid = false;
+        }
+
+        if (!empty($_POST['phone'])) {
+            $phone = $_POST['phone'];
+            $_SESSION['phone'] = $phone;
+        } else {
+            $f3->set("errors['phone']", "Please enter a phone number");
+            $isValid = false;
+        }
+
         if ($isValid)
         {
             $f3->reroute('date2');
@@ -49,7 +88,7 @@ $f3->route('GET|POST /date', function($f3) {
 //Define a form2 route
 $f3->route('GET|POST /date2', function($f3) {
 
-    print_r($_SESSION);
+    //print_r($_SESSION);
     global $isValid;
     $f3->set('states', array('AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL',
         'IN','IA','KS','KY','LA','ME','MD','MA', 'MI','MN','MS','MO','MT','NE','NV',
@@ -58,17 +97,56 @@ $f3->route('GET|POST /date2', function($f3) {
 
     if(isset($_POST['email']))
     {
-        include("model/Validation.php");
+        $isValid=true;
+        // $isValid ['firstName'] = true;
+
+        if (!empty($_POST['email'])) {
+            $email = $_POST['email'];
+            $_SESSION['email'] = $email;
+        } else {
+            $f3->set("errors['phone']", "Please enter a phone number");
+            // $isValid['firstName'] = false;
+        }
+
+        if (!empty($_POST['state'])) {
+            $lname = $_POST['lastName'];
+            $_SESSION['lastName'] = $lname;
+        } else {
+            $f3->set("errors['phone']", "Please enter a phone number");
+            $isValid = false;
+        }
+
+        if (!empty($_POST['age'])) {
+            $age = $_POST['age'];
+            $_SESSION['age'] = $age;
+        } else {
+            $f3->set("errors['phone']", "Please enter a phone number");
+            $isValid = false;
+        }
+
+        if (!empty($_POST['sex'])) {
+            $sex = $_POST['sex'];
+            $_SESSION['sex'] = $sex;
+        } else {
+            $f3->set("errors['phone']", "Please enter a phone number");
+            $isValid = false;
+        }
+
+        if (!empty($_POST['phone'])) {
+            $phone = $_POST['phone'];
+            $_SESSION['phone'] = $phone;
+        } else {
+            $f3->set("errors['phone']", "Please enter a phone number");
+            $isValid = false;
+        }
         if ($isValid)
         {
             $f3->reroute('date3');
         }
     }
 
-
-
     $template = new Template();
-    echo $template->render('views/profile.php');
+    echo $template->render('views/profile.html');
 });
 
 //Define a form3 route

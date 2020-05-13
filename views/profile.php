@@ -58,7 +58,7 @@ Filename: home.html
         <div class="row">
         <div class="col-6">
             <div class="form-group">
-                <label class="col-md-5 col-lg-8 control-label">Email: <br></label>
+                <label class="col-md-5 col-lg-8 control-label" for="email">Email: <br></label>
                 <div class="inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fas fa-user-alt"></i></span>
@@ -70,13 +70,13 @@ Filename: home.html
 </div>
 
 <div class="form-group">
-    <label class="col-md-5 col-lg-8 control-label">State</label>
+    <label class="col-md-5 col-lg-8 control-label" for="{{ @state }}">State</label>
     <div class="inputGroupContainer">
         <div class="input-group">
             <span class="input-group-addon"><i class="fas fa-key"></i></span>
-            <select>
+            <select  name="{{ @state }}" id="{{ @state }}">
                 <repeat>
-                    <option value='{{ @states }}'>{{ @state }}</option>
+                    <option value='{{ @states }}' name="{{ @state }}" id="{{ @state }}">{{ @state }}</option>
                 </repeat>
             </select>
             <span  class="err" id="err-Age"><?php echo $passwordError ?></span>

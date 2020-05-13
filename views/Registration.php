@@ -65,7 +65,7 @@
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fas fa-user-alt"></i></span>
                                     <input id="firstName" name="firstName" placeholder="First Name" class="form-control" value = "<?php echo $fname?>" type="text">
-                                    <span  class="err" id="err-fname"><?php echo $_SESSION['firstName'] ?></span>
+                                    <span  class="err" id="err-fname"><?php echo $_SESSION['firstName'] ?> Please enter a first name</span>
                                 </div>
                             </div>
                         </div>
