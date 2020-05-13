@@ -23,7 +23,7 @@ $f3->set('DEBUG', 3);
 //Define a default route
 $f3->route('GET /', function() {
 
-    $view = new View;
+    $view = new Template();
     echo $view->render('views/home.html');
 });
 
@@ -31,7 +31,6 @@ $f3->route('GET /', function() {
 //Define a form1 route
 $f3->route('GET|POST /date', function($f3) {
     $_SESSION = array();
-    global $isValid;
 
     if(isset($_POST['submit']))
     {
@@ -52,24 +51,21 @@ $f3->route('GET|POST /date', function($f3) {
         }
 
         if (!empty($_POST['age'])) {
-            $age = $_POST['age'];
-            $_SESSION['age'] = $age;
+            $_SESSION['age'] = $_POST['age'];
         } else {
             $f3->set("errors['age']", "Please enter an age");
             $isValid = false;
         }
 
         if (!empty($_POST['sex'])) {
-            $sex = $_POST['sex'];
-            $_SESSION['sex'] = $sex;
+            $_SESSION['sex'] = $_POST['sex'];
         } else {
             $f3->set("errors['sex']", "Please enter a sex");
             $isValid = false;
         }
 
         if (!empty($_POST['phone'])) {
-            $phone = $_POST['phone'];
-            $_SESSION['phone'] = $phone;
+            $_SESSION['phone'] = $_POST['phone'];
         } else {
             $f3->set("errors['phone']", "Please enter a phone number");
             $isValid = false;
@@ -82,63 +78,91 @@ $f3->route('GET|POST /date', function($f3) {
     }
 
     $template = new Template();
-    echo $template->render('views/Registration.php');
+    echo $template->render('views/registration.html');
 });
 
 //Define a form2 route
 $f3->route('GET|POST /date2', function($f3) {
 
-    //print_r($_SESSION);
-    global $isValid;
-    $f3->set('states', array('AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL',
-        'IN','IA','KS','KY','LA','ME','MD','MA', 'MI','MN','MS','MO','MT','NE','NV',
-        'NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT',
-        'VT','VA','WA','WI','WY'));
+    $f3->set('states', array('AL'=>"Alabama",
+        'AK'=>"Alaska",
+        'AZ'=>"Arizona",
+        'AR'=>"Arkansas",
+        'CA'=>"California",
+        'CO'=>"Colorado",
+        'CT'=>"Connecticut",
+        'DE'=>"Delaware",
+        'DC'=>"District Of Columbia",
+        'FL'=>"Florida",
+        'GA'=>"Georgia",
+        'HI'=>"Hawaii",
+        'ID'=>"Idaho",
+        'IL'=>"Illinois",
+        'IN'=>"Indiana",
+        'IA'=>"Iowa",
+        'KS'=>"Kansas",
+        'KY'=>"Kentucky",
+        'LA'=>"Louisiana",
+        'ME'=>"Maine",
+        'MD'=>"Maryland",
+        'MA'=>"Massachusetts",
+        'MI'=>"Michigan",
+        'MN'=>"Minnesota",
+        'MS'=>"Mississippi",
+        'MO'=>"Missouri",
+        'MT'=>"Montana",
+        'NE'=>"Nebraska",
+        'NV'=>"Nevada",
+        'NH'=>"New Hampshire",
+        'NJ'=>"New Jersey",
+        'NM'=>"New Mexico",
+        'NY'=>"New York",
+        'NC'=>"North Carolina",
+        'ND'=>"North Dakota",
+        'OH'=>"Ohio",
+        'OK'=>"Oklahoma",
+        'OR'=>"Oregon",
+        'PA'=>"Pennsylvania",
+        'RI'=>"Rhode Island",
+        'SC'=>"South Carolina",
+        'SD'=>"South Dakota",
+        'TN'=>"Tennessee",
+        'TX'=>"Texas",
+        'UT'=>"Utah",
+        'VT'=>"Vermont",
+        'VA'=>"Virginia",
+        'WA'=>"Washington",
+        'WV'=>"West Virginia",
+        'WI'=>"Wisconsin",
+        'WY'=>"Wyoming"));
 
-    if(isset($_POST['email']))
+    print_r($_SESSION);
+
+    if(isset($_POST['submit']))
     {
         $isValid=true;
-        // $isValid ['firstName'] = true;
 
         if (!empty($_POST['email'])) {
-            $email = $_POST['email'];
-            $_SESSION['email'] = $email;
+            $_SESSION['email']  = $_POST['email'];
         } else {
-            $f3->set("errors['phone']", "Please enter a phone number");
-            // $isValid['firstName'] = false;
+            $f3->set("errors['email']", "Please enter a phone number");
+            $isValid = false;
         }
 
         if (!empty($_POST['state'])) {
-            $lname = $_POST['lastName'];
-            $_SESSION['lastName'] = $lname;
+            $_SESSION['state'] = $_POST['state'];
         } else {
-            $f3->set("errors['phone']", "Please enter a phone number");
+            $f3->set("errors['state']", "Please enter a state");
             $isValid = false;
         }
 
-        if (!empty($_POST['age'])) {
-            $age = $_POST['age'];
-            $_SESSION['age'] = $age;
+        if (!empty($_POST['seeking'])) {
+            $_SESSION['seeking'] = $_POST['seeking'];
         } else {
-            $f3->set("errors['phone']", "Please enter a phone number");
+            $f3->set("errors['seeking']", "Please enter a phone number");
             $isValid = false;
         }
 
-        if (!empty($_POST['sex'])) {
-            $sex = $_POST['sex'];
-            $_SESSION['sex'] = $sex;
-        } else {
-            $f3->set("errors['phone']", "Please enter a phone number");
-            $isValid = false;
-        }
-
-        if (!empty($_POST['phone'])) {
-            $phone = $_POST['phone'];
-            $_SESSION['phone'] = $phone;
-        } else {
-            $f3->set("errors['phone']", "Please enter a phone number");
-            $isValid = false;
-        }
         if ($isValid)
         {
             $f3->reroute('date3');

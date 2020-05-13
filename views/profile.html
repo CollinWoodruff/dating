@@ -56,52 +56,53 @@ Filename: home.html
                             <span class="input-group-addon"><i class="fas fa-user-alt"></i></span>
                             <input class="form-control mx-sm-2" type="text" name="email" id="email"
                                    size="20" required />
-                            <span  class="err" id="err-lname"><?php echo $lNameError ?></span>
+                            <span  class="err" id="err-lname">{{ @errors['email'] }}</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="col-md-5 col-lg-8 control-label" for="{{ @state }}">State</label>
-                    <div class="inputGroupContainer">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fas fa-key"></i></span>
-                            <select  name="{{ @state }}" id="{{ @state }}">
-                                <repeat>
-                                    <option value='{{ @states }}' name="{{ @state }}">{{ @state }}</option>
-                                </repeat>
-                            </select>
-                            <span  class="err" id="err-Age"></span>
-                        </div>
-                    </div>
-                </div>
+                     <label class="col-md-5 col-lg-8 control-label" for="state">State</label>
+                     <div class="inputGroupContainer">
+                         <div class="input-group">
+                             <span class="input-group-addon"><i class="fas fa-key"></i></span>
+                            <select  name="state" id="state">
+                                 <repeat group="{{ @states }}" value="{{ @state }}">
+                                     <option value='{{ @state }}' name="{{ @state }}">{{ @state }}</option>
+                                 </repeat>
+                             </select>
+                             <span  class="err" id="err-Age">{{ @errors['state'] }}</span>
+                         </div>
+                     </div>
+                 </div>
 
-                <div class="form-group">
-                    <label class="col-md-5 col-lg-8 control-label">Seeking</label>
-                    <div class=" text-dark" >
-                        <div class="radio" >
-                            <label class="mr-3">
-                                <input type="radio" name="flight" value="M" id="flightYes"/> Male
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="flight" value="F" id="flightNo"/> Female
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <label class="form-control-label">
-                    <br />Biography:<br />
-                    <textarea class="form-control" id="comments" rows="5" name="comments"></textarea>
-                </label><br />
+                 <div class="form-group">
+                     <label class="col-md-5 col-lg-8 control-label">Seeking</label>
+                     <div class=" text-dark" >
+                         <div class="radio" >
+                             <label class="mr-3">
+                                 <input type="radio" name="seeking" value="Male" id="flightYes"/> Male
+                             </label>
+                         </div>
+                         <div class="radio">
+                             <label>
+                                 <input type="radio" name="seeking" value="Female" id="flightNo"/> Female
+                             </label>
+                         </div>
+                         <span  class="err" id="err-Seeking">{{ @errors['seeking'] }}</span>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-6">
+                 <label class="form-control-label">
+                     <br />Biography:<br />
+                     <textarea class="form-control" id="comments" rows="5" name="comments"></textarea>
+                 </label><br />
 
-                <button class='btns' type='submit' name="submit2" value="submit">What are your interests?</button>
-            </div>
-        </div>
-    </form>
-</div>
-</body>
-</html>
+                 <button class='btns' type='submit' name="submit" value="submit">What are your interests?</button>
+             </div>
+         </div>
+     </form>
+ </div>
+ </body>
+ </html>
