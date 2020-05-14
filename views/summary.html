@@ -1,57 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <!--
+   Dating Website
+   Author: Collin Woodruff
+   Date:   4/22/2020
+
+   Filename: home.html
+  -->
     <title>Dating Site</title>
+    <meta charset="UTF-8">
     <link href="/328X2/dating/styles/styles.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet"
           href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 </head>
 <body class="bg-info">
-<div id="colorlib-about">
-    <div class="container">
-        <div class="row text-center">
-            <h2 class="bold">About</h2>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar position-absolute bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#"><strong>Obeagle</strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link text-primary" href="{{ @BASE }}">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-primary" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-primary" href="#">Profile</a>
+                    </li>
+                </ul>
+                <form class="form-inline">
+                    <div class="md-form my-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="row">
-            <div class="col-md-5 animate-box">
-                <div class="owl-carousel3">
-                    <div class="item">
-                        <img class="img-responsive about-img" src="images/about.jpg" alt="html5 bootstrap template by colorlib.com">
-                    </div>
-                    <div class="item">
-                        <img class="img-responsive about-img" src="images/about-2.jpg" alt="html5 bootstrap template by colorlib.com">
-                    </div>
+    </nav>
+</header>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h3  class="text-lg-center">{{ @first }} {{ @last }}</h3>
+            <p  class="text-lg-center float-left">{{ @bio }}</p><br><br>
+
+            <h6 class="align-self-lg-auto">Information</h6>
+            <article>
+                <hr>
+                <div class="entry-content">
+                    <h6>Sex</h6>
+                    <p class="font-italic padding-left">{{ @sex }}</p>
                 </div>
-            </div>
-            <div class="col-md-6 col-md-push-1 animate-box">
-                <div class="about-desc">
-                    <div class="owl-carousel3">
-                        <div class="item">
-                            <h2><span><?php echo $fname; ?></span><span><?php echo $_SESSION['lastName']; ?></span></h2>
-                        </div>
-                        <div class="item">
-                            <h2><span>I'm</span><span>A Designer</span></h2>
-                        </div>
-                    </div>
-                    <div class="desc">
-                        <div class="rotate">
-                            <h2 class="heading">About</h2>
-                        </div>
-                        <p>A small river named Duden <a href="#">flows by their place</a> and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life.</p>
-                        <p class="colorlib-social-icons">
-                            <a href="#"><i class="icon-facebook4"></i></a>
-                            <a href="#"><i class="icon-twitter3"></i></a>
-                            <a href="#"><i class="icon-googleplus"></i></a>
-                            <a href="#"><i class="icon-dribbble2"></i></a>
-                        </p>
-                        <p><a href="#" class="btn btn-primary btn-outline">Contact Me!</a></p>
-                    </div>
+                <hr>
+                <div class="entry-content">
+                    <h6>Phone</h6>
+                    <p class="font-italic padding-left">{{ @phone }}</p>
                 </div>
-            </div>
+                <hr>
+                <div class="entry-content">
+                    <h6>Email</h6>
+                    <p class="font-italic padding-left">{{ @email }}</p>
+                </div>
+                <hr>
+                <div class="entry-content">
+                    <h6>State</h6>
+                    <p class="font-italic padding-left">{{ @state }}</p>
+                </div>
+                <hr>
+                <div class="entry-content">
+                    <h6>Seeking</h6>
+                    <p class="font-italic padding-left">{{ @seeking }}</p>
+                </div>
+                <hr>
+                <div class="entry-content">
+                    <h6>Indoor Interests</h6>
+                    <p class="font-italic padding-left">{{ @indoor }}</p>
+                </div>
+                <hr>
+                <div class="entry-content">
+                    <h6>Outdoor Interests</h6>
+                    <p class="font-italic padding-left">{{ @outdoor }}</p>
+                </div>
+                <hr>
+
+            </article>
+        </div>
+
+        <div class="col-6">
+            <img class="img-fluid rounded" src="/328X2/dating/images/Obeagle/awe.jpg" alt="dating" id="midg">
+            <form style="display: inline" action="#" method="get">
+                <button id='Contact' class='button button2' type='submit'>Contact Me</button>
+            </form>
         </div>
     </div>
 </div>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
+

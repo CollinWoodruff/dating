@@ -136,7 +136,6 @@ $f3->route('GET|POST /date2', function($f3) {
         'WI'=>"Wisconsin",
         'WY'=>"Wyoming"));
 
-    print_r($_SESSION);
 
     if(isset($_POST['submit']))
     {
@@ -162,6 +161,10 @@ $f3->route('GET|POST /date2', function($f3) {
             $f3->set("errors['seeking']", "Please enter a phone number");
             $isValid = false;
         }
+        if(isset($_POST['comments']))
+        {
+            $_SESSION['bio'] = $_POST['comments'];
+        }
 
         if ($isValid)
         {
@@ -178,7 +181,6 @@ $f3->route('GET|POST /date3', function($f3) {
 
     $f3->set('indoors',array('T.V','Movies','Cooking','Puzzles','Reading','Playing Card','Video Games'));
     $f3->set('outdoors',array('Hiking','Biking','Swimming','Collecting','Walking','Climbing'));
-    print_r($_SESSION);
 
     if(isset($_POST['submit']))
     {
@@ -212,7 +214,16 @@ $f3->route('GET|POST /date3', function($f3) {
 
 //Define a form4 route
 $f3->route('GET|POST /date4', function($f3) {
-    print_r($_SESSION);
+    $f3->set('first',$_SESSION['firstName']);
+    $f3->set('last',$_SESSION['lastName']);
+    $f3->set('sex',$_SESSION['sex']);
+    $f3->set('state',$_SESSION['state']);
+    $f3->set('phone',$_SESSION['phone']);
+    $f3->set('bio',$_SESSION['bio']);
+    $f3->set('email',$_SESSION['email']);
+    $f3->set('seeking',$_SESSION['seeking']);
+    $f3->set('indoor',implode(" ",$_SESSION['indoors']));
+    $f3->set('outdoor',implode(" ",$_SESSION['outdoors']));
 
     $template = new Template();
     echo $template->render('views/summary.html');

@@ -26,7 +26,7 @@ Filename: home.html
             <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link text-primary" href="#">Home<span class="sr-only">(current)</span></a>
+                        <a class="nav-link text-primary" href="{{ @BASE }}">Home<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-primary" href="#">Link</a>
@@ -58,7 +58,7 @@ Filename: home.html
         </repeat>
         <small  class="err" id="err-indoor">{{ @errors['indoor'] }}</small>
         <br>
-    </div>
+    </div><hr><hr>
     <div class="column">
             <h4>Out-door Interests</h4>
         <repeat group="{{ @outdoors }}" value="{{ @outdoor }}">
@@ -68,7 +68,7 @@ Filename: home.html
         </repeat>
         <small  class="err" id="err-outdoor">{{ @errors['outdoor'] }}</small>
         <br>
-    </div>
+    </div><hr>
         </fieldset>
     <button class='btns' type='submit' name="submit" value="submit">Go check out your profile!</button>
     </form>
