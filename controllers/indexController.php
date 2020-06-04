@@ -239,7 +239,7 @@ class indexController
      */
     public function summary()
     {
-        print_r($_SESSION);
+        //print_r($_SESSION);
         $this->_f3->set('first',$_SESSION['firstName']);
         $this->_f3->set('last',$_SESSION['lastName']);
         $this->_f3->set('sex',$_SESSION['sex']);
