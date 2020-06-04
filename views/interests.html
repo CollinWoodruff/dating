@@ -10,7 +10,7 @@ Filename: interests.html
 -->
     <meta charset="UTF-8">
     <title>Dating Site</title>
-    <link href="/328X2/dating/styles/styles.css" rel="stylesheet" type="text/css" />
+    <link href="/328X2/dating3/styles/styles.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet"
           href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
@@ -44,33 +44,42 @@ Filename: interests.html
         </div>
     </nav>
 </header>
-<div class="container-fluid checkboxes">
+<div class="container center_div">
     <form action="#" method="post" class="form-horizontal border-dark">
-    <h1 class="text-primary">Interests</h1>
-    <hr>
-        <fieldset class="border-dark">
-    <div class="column">
-            <h4>In-door interests</h4>
-        <repeat group="{{ @indoors }}" value="{{ @indoor }}">
-            <label>
-                <input type="checkbox" value="{{ @indoor }}" name="indoor[]">&nbsp;{{ @indoor }}
-            </label>
-        </repeat>
-        <small  class="err" id="err-indoor">{{ @errors['indoor'] }}</small>
-        <br>
-    </div><hr><hr>
-    <div class="column">
-            <h4>Out-door Interests</h4>
-        <repeat group="{{ @outdoors }}" value="{{ @outdoor }}">
-            <label>
-                <input type="checkbox" value="{{ @outdoor }}" name="outdoor[]">&nbsp;{{ @outdoor }}
-            </label>
-        </repeat>
-        <small  class="err" id="err-outdoor">{{ @errors['outdoor'] }}</small>
-        <br>
-    </div><hr>
-        </fieldset>
-    <button class='btns rounded' type='submit' name="submit" value="submit">Go check out your profile!</button>
+        <div class="row justify-content-center">
+            <div class="border border-dark background bg-transparent m-4">
+                <fieldset class="form-group m-5 text-center" id="register">
+                    <h1>Interests</h1><hr>
+                    <br>
+                    <fieldset class="border-dark">
+                        <div class="column">
+                            <h4>In-door interests</h4>
+                            <repeat group="{{ @indoors }}" value="{{ @indoor }}">
+                                <label>
+                                    <input type="checkbox" value="{{ @indoor }}" name="indoor[]">&nbsp;{{ @indoor }}
+                                </label>
+                            </repeat>
+
+                            <br>
+                        </div><hr> <small  class="" id="err-indoor">{{ @errors['indoor'] }}</small>
+                        <small  class="" id="err-outdoor">{{ @errors['outdoor'] }}</small><hr>
+                        <div class="column">
+                            <h4>Out-door Interests</h4>
+                            <repeat group="{{ @outdoors }}" value="{{ @outdoor }}">
+                                <label>
+                                    <input type="checkbox" value="{{ @outdoor }}" name="outdoor[]">&nbsp;{{ @outdoor }}
+                                </label>
+                            </repeat>
+
+                            <br>
+                        </div><hr>
+                    </fieldset>
+                    <div class="form-group ">
+                        <button class='btn btn-dark rounded' type='submit' name="submit" value="submit">Create Profile</button>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
     </form>
 </div>
 </body>

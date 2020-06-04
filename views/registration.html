@@ -10,7 +10,7 @@ Filename: registration.html
 -->
     <meta charset="UTF-8">
     <title>Dating Site</title>
-    <link href="/328X2/dating/styles/styles.css" rel="stylesheet" type="text/css" />
+    <link href="/328X2/dating3/styles/styles.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet"
           href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
@@ -58,9 +58,10 @@ Filename: registration.html
                             <div class="inputGroupContainer">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fas fa-user-alt"></i></span>
-                                    <input id="firstName" name="firstName" placeholder="First Name" class="form-control" value = "<?php echo $fname?>" type="text">
-                                    <span  class="err help-block" id="err-fname">{{ @errors['first'] }}</span>
+                                    <input id="firstName" name="firstName" placeholder="First Name" class="form-control" value = "{{ @first }}" type="text">
                                 </div>
+                                <small class="">{{ @errors['first'] }}</small>
+
                             </div>
                         </div>
 
@@ -69,9 +70,10 @@ Filename: registration.html
                             <div class="inputGroupContainer">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fas fa-user-alt"></i></span>
-                                    <input id="lastName" name="lastName" placeholder="Last Name" class="form-control" value = "<?php echo $lname?>" type="text">
-                                    <span  class="err help-block" id="err-lname">{{ @errors['last'] }}</span>
+                                    <input id="lastName" name="lastName" placeholder="Last Name" class="form-control"  value = "{{ @last }}" type="text">
                                 </div>
+                                <span  class="" id="err-lname">{{ @errors['last'] }}</span>
+
                             </div>
                         </div>
 
@@ -80,9 +82,10 @@ Filename: registration.html
                             <div class="inputGroupContainer">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fas fa-key"></i></span>
-                                    <input id="age" name="age" placeholder="Enter Age" class="form-control" value="<?php echo $age?>" type="number">
-                                    <span  class="err help-block" id="err-Age">{{ @errors['age'] }}</span>
+                                    <input id="age" name="age" placeholder="Enter Age" class="form-control"  value = "{{ @age }}" type="number">
                                 </div>
+                                <span  class="" id="err-Age">{{ @errors['age'] }}</span>
+
                             </div>
                         </div>
 
@@ -99,7 +102,7 @@ Filename: registration.html
                                         <input type="radio" name="sex" value="Female" id="female"/> Female
                                     </label>
                                 </div>
-                                <span  class="err help-block" id="err-Sex">{{ @errors['sex'] }}</span>
+                                <span  class="" id="err-Sex">{{ @errors['sex'] }}</span>
                             </div>
                         </div>
 
@@ -109,8 +112,8 @@ Filename: registration.html
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="far fa-envelope"></i></span>
                                     <input  class="form-control mx-sm-2" type="text" name="phone" id="phone" size="20"
-                                            pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$" value="<?php echo $phone?>"/>
-                                    <span  class="err help-block" id="err-phone">{{ @errors['phone'] }}</span>
+                                            pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$"  value = "{{ @phone }}"/>
+                                    <span  class="" id="err-phone">{{ @errors['phone'] }}</span>
                                 </div>
                             </div>
                         </div>
@@ -119,8 +122,8 @@ Filename: registration.html
                 <div class="col-6" >
                     <h6>Premium Membership</h6><hr>
                     <label>
-                        <input type="checkbox" value="Premium" id="membership"
-                               name="membership[]">&nbsp;Sign me up For a Premium Account!
+                        <input type="checkbox" value="premiumMember" id="premiumMember"
+                               name="premiumMember">&nbsp;Sign me up For a Premium Account!
                     </label><br>
 
                     <br>

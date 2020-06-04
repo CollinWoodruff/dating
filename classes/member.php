@@ -21,13 +21,17 @@ class member
     private $_seeking;
     private $_bio;
 
-    function __construct($fname, $lname, $age, $gender, $phone)
+    function __construct($_fname, $_lname, $_age, $_email, $_phone, $_state, $_gender, $_seeking,$_bio)
     {
-        $this -> fname = $fname;
-        $this -> lname = $lname;
-        $this -> age = $age;
-        $this -> gender = $gender;
-        $this -> phone = $phone;
+        $this->setFName($_fname);
+        $this->setLName($_lname);
+        $this->setAge($_age);
+        $this->setPhone($_phone);
+        $this->setEmail($_email);
+        $this->setState($_state);
+        $this->setGender($_gender);
+        $this->setSeeking($_seeking);
+        $this->setBio($_bio);
     }
 
     function setFName($fname)
@@ -118,5 +122,28 @@ class member
     function getBio()
     {
         return $this->bio;
+    }
+
+    /** toString() returns a String representation
+     *  of an order object
+     *  @return string
+     */
+    public function toString()
+    {
+        $out = $this->_first . ", ";
+        $out .= $this->_last . ", ";
+        $out .= $this->_age . ", ";
+        $out .= $this->_phone . ", ";
+        $out .= $this->_first . ", ";
+        $out .= $this->_email . ", ";
+
+        if (!empty($this->_indoor)) {
+            $out .= implode(" & ", $this->_indoor);
+        }
+        if (!empty($this->_outdoor)) {
+            $out .= implode(" & ", $this->_outdoor);
+        }
+
+        return $out;
     }
 }

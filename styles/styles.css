@@ -16,7 +16,7 @@
 
 
 html {
-    /*background: url('/328X2/dating/images/Obeagle/doggoOne.jpg') no-repeat center center fixed;/*https://www.lonelyplanet.com/usa/rocky-mountains*/
+    /*background: url('/328X2/dating3/images/Obeagle/doggoOne.jpg') no-repeat center center fixed;/*https://www.lonelyplanet.com/usa/rocky-mountains*/
     background-size: cover;
 }
 
@@ -70,9 +70,9 @@ button:hover {
 }
 
 .err {
-    visibility: hidden;
     color: darkred;
     padding-left: 1.3em;
+    visibility: visible;
 }
 
 .checkboxes {
